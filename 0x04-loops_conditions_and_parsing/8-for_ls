@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This program displays content of the current directory using cut to cut some fields
+for i in *; do echo "$i" | cut -d "-" -f2; done
