@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# configure a brand new NGINX server
+
+apt-get -y update
+apt-get -y install nginx
+
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/shorts/Srj05lBrk84 permanent;" /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server;/a error_page 404 /404.html;" /etc/nginx/sites-available/default
+
+ufw allow 'Nginx HTTP'
+service nginx restart
