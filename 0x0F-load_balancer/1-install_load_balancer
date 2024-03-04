@@ -11,11 +11,11 @@ echo \
 frontend localnodes
 	bind *:80
 	mode http
-	default_backend nodes
-backend nodes
+	default_backend web_back
+backend web_back
 	mode http
 	balance roundrobin
-	server 1346-web-01 35.237.170.121
-	server 1346-web-02 34.75.240.48" >> /etc/haproxy/haproxy.cfg
+	server 44456-web-01 18.206.202.190:80 check
+	server 44456-web-02 100.25.111.177:80 check" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
