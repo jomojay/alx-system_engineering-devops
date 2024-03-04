@@ -19,4 +19,4 @@ backend web_back
 	server 44456-web-01 18.206.202.190:80 check
 	server 44456-web-02 100.25.111.177:80 check" >> /etc/haproxy/haproxy.cfg
 
-sudo service haproxy restart
+sudo service haproxy start
