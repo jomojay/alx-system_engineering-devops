@@ -15,7 +15,7 @@ frontend localnodes
 backend web_back
 	mode http
 	balance roundrobin
-	server 44456-web-01 18.206.202.190:80 check
-	server 44456-web-02 100.25.111.177:80 check" >> /etc/haproxy/haproxy.cfg
+	server 44456-web-01 54.221.180.0:80 check
+	server 44456-web-02 100.27.14.142:80 check" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
