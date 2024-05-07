@@ -6,7 +6,7 @@ from requests import get
 def top_ten(subreddit):
     '''get subscribers total number'''
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    header = {'user-agent': 'jomojay-app0'}
+    header = {'user-agent': 'jomojay-app1'}
     res = get(url, headers=header, allow_redirects=False)
     if res.status_code != 200:
         print("None")
